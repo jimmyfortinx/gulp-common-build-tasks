@@ -1,5 +1,5 @@
 {
-  "name": "gulp-node-common-tasks",
+  "name": "gulp-common-build-tasks",
   "version": "0.0.1",
   "description": "Common features for all build tasks projects.",
   "main": "src/index.js",

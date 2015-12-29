@@ -1,3 +1,1 @@
-exports.test = function() {
-    console.log('test');
-};
+exports.tasksRegister = require('./tasks-register');

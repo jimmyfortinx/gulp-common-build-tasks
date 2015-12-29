@@ -1,0 +1,29 @@
+{
+  "name": "gulp-node-common-tasks",
+  "version": "0.0.1",
+  "description": "Common features for all build tasks projects.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimmyfortinx/gulp-common-build-tasks.git"
+  },
+  "keywords": [
+    "gulp",
+    "build",
+    "tasks",
+    "application"
+  ],
+  "author": "Jimmy Fortin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimmyfortinx/gulp-common-build-tasks/issues"
+  },
+  "homepage": "https://github.com/jimmyfortinx/gulp-common-build-tasks",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-node-build-tasks": "git+https://github.com/jimmyfortinx/gulp-node-build-tasks.git"
+  }
+}

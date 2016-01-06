@@ -9,14 +9,21 @@ module.exports = function(subTasksPrefix) {
         return hasCopyFlag(name) ? taskName : name;
     }
 
+    function processSubTasksName(subTasksName, taskName) {
+        // If an array we suppose the module name is included in the subtask name
+        if (_.isArray(subTasksName)) {
+            return subTasksName;
+        } else {
+            var partialSubTaskName = getDestinationName(subTasksName, taskName);
+            return [getSubTask(partialSubTaskName)];
+        }
+    }
+
     function registerTasks(gulp, tasks) {
         _.forEach(tasks, registerOne);
 
-        function registerOne(subTaskName, taskName) {
-            var partialSubTaskName = getDestinationName(subTaskName, taskName);
-            var completeSubTaskName = getSubTask(partialSubTaskName);
-
-            gulp.task(taskName, [completeSubTaskName]);
+        function registerOne(subTasksName, taskName) {
+            gulp.task(taskName, processSubTasksName(subTasksName, taskName));
         }
     }
 

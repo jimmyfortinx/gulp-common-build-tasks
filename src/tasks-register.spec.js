@@ -93,7 +93,7 @@ describe('task-register', function() {
             expect(gulp.task.calls.first().args[1]).toEqual(['fake-module:test']);
         });
 
-        it('registers a task with an explicit function name', function() {
+        it('registers a task with an explicit subtask name', function() {
             var tasks = {
                 'another:test': 'test'
             };
@@ -102,6 +102,17 @@ describe('task-register', function() {
 
             expect(gulp.task).toHaveBeenCalledWith('another:test', jasmine.any(Object));
             expect(gulp.task.calls.first().args[1]).toEqual(['fake-module:test']);
+        });
+
+        it('registers a task with an explicit subtask name array', function() {
+            var tasks = {
+                'another:test': ['fake-module:test', 'fake-module2:test2']
+            };
+
+            tasksRegister.registerTasks(gulp, tasks);
+
+            expect(gulp.task).toHaveBeenCalledWith('another:test', jasmine.any(Object));
+            expect(gulp.task.calls.first().args[1]).toEqual(['fake-module:test', 'fake-module2:test2']);
         });
     });
 });

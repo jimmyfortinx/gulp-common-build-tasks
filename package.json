@@ -22,7 +22,12 @@
     "url": "https://github.com/jimmyfortinx/gulp-common-build-tasks/issues"
   },
   "homepage": "https://github.com/jimmyfortinx/gulp-common-build-tasks",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "lodash": "^3.10.1"
+  },
   "devDependencies": {
     "gulp-node-build-tasks": "git+https://github.com/jimmyfortinx/gulp-node-build-tasks.git"
   }

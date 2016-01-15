@@ -26,9 +26,11 @@
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^2.0.0",
     "gulp-load-plugins": "^1.2.0",
+    "is-there": "^4.3.1",
     "lodash": "^3.10.1"
   },
   "devDependencies": {
-    "gulp-node-build-tasks": "git+https://github.com/jimmyfortinx/gulp-node-build-tasks.git"
+    "gulp-node-build-tasks": "git+https://github.com/jimmyfortinx/gulp-node-build-tasks.git",
+    "proxyquire": "^1.7.3"
   }
 }

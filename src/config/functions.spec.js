@@ -1,13 +1,13 @@
 var proxyquire =  require('proxyquire');
 var isThereSpy;
 var path = require('path');
-var config;
+var functions;
 
-describe('config', function() {
+describe('functions', function() {
     beforeEach(function() {
         isThereSpy = jasmine.createSpy('IsThere').and.returnValue(true);
 
-        config = proxyquire('./config', {
+        functions = proxyquire('./functions', {
             'is-there': isThereSpy
         });
     });
@@ -16,7 +16,7 @@ describe('config', function() {
         it('adds the default config to an empty config file', function() {
             var configJson = {};
 
-            config.addDefaultJsHintConfig(configJson);
+            functions.addDefaultJsHintConfig(configJson);
 
             expect(configJson.jshint.globals).toBeTruthy();
         });
@@ -28,7 +28,7 @@ describe('config', function() {
                 }
             };
 
-            config.addDefaultJsHintConfig(configJson);
+            functions.addDefaultJsHintConfig(configJson);
 
             expect(configJson.jshint.globals).toBeTruthy();
             expect(configJson.jshint.test).toEqual('testValue');
@@ -37,14 +37,14 @@ describe('config', function() {
 
     describe('hasJSHintFile', function() {
         it('check for the right filename', function() {
-            config.hasJSHintFile('aDirectory/far');
+            functions.hasJSHintFile('aDirectory/far');
 
             expect(isThereSpy).toHaveBeenCalledWith(path.normalize('aDirectory/far/.jshintrc'));
         });
 
         it('is cached', function() {
-            config.hasJSHintFile('aDirectory/far');
-            config.hasJSHintFile('aDirectory/far');
+            functions.hasJSHintFile('aDirectory/far');
+            functions.hasJSHintFile('aDirectory/far');
 
             expect(isThereSpy.calls.count()).toEqual(1);
         });
@@ -52,14 +52,14 @@ describe('config', function() {
 
     describe('hasJSCSFile', function() {
         it('check for the right filename', function() {
-            config.hasJSCSFile('aDirectory/far');
+            functions.hasJSCSFile('aDirectory/far');
 
             expect(isThereSpy).toHaveBeenCalledWith(path.normalize('aDirectory/far/.jscsrc'));
         });
 
         it('is cached', function() {
-            config.hasJSCSFile('aDirectory/far');
-            config.hasJSCSFile('aDirectory/far');
+            functions.hasJSCSFile('aDirectory/far');
+            functions.hasJSCSFile('aDirectory/far');
 
             expect(isThereSpy.calls.count()).toEqual(1);
         });

@@ -29,7 +29,7 @@ exports.hasJSCSFile = function(projectDirectory) {
         hasJSCSCache = isThere(path.join(projectDirectory, '.jscsrc'));
     }
 
-    return hasJSHintCache;
+    return hasJSCSCache;
 };
 
 exports.addDefaultJsHintConfig = function(config) {

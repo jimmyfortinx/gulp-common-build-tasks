@@ -3,15 +3,18 @@
 var path = require('path');
 
 var $ = require('./utils/plugins-loader');
+var tasks = require('./tasks')();
 
-exports.jshint = function(config, gulp) {
+tasks.create('.jshint', function(gulp, config) {
     return gulp.src(path.join(config.paths.src, '/**/*.js'))
         .pipe($.jshint(config.jshint))
         .pipe($.jshint.reporter('default'));
-};
+});
 
-exports.jscs = function(config, gulp) {
+tasks.create('.jscs', function(gulp, config) {
     return gulp.src(path.join(config.paths.src, '/**/*.js'))
         .pipe($.jscs())
         .pipe($.jscs.reporter());
-};
+});
+
+module.exports = tasks;

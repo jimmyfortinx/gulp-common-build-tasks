@@ -12,7 +12,7 @@ exports.getProjectDirectory = function(userConfig) {
     if (_.has(userConfig, 'projectDirectory')) {
         return userConfig.projectDirectory;
     } else {
-        return path.join(__dirname, '..');
+        return path.join(__dirname, '../../../..');
     }
 };
 

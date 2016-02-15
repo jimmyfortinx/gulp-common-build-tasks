@@ -5,5 +5,6 @@
 	"quotmark": "single",
 	"maxlen": 120,
 	"trailing": true,
-	"curly": true
+	"curly": true,
+    "esversion": 6
 }

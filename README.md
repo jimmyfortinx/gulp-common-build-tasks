@@ -33,7 +33,7 @@ gulp task named ```namespace.test```.
 ```javascript
 var common = require('gulp-common-build-tasks');
 
-var tasks = common.tasks('namespace);
+var tasks = common.tasks('namespace');
 
 module.exports = tasks;
 ```

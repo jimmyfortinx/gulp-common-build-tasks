@@ -1,7 +1,7 @@
 {
   "name": "gulp-common-build-tasks",
   "version": "0.0.1",
-  "description": "Common features for all build tasks projects.",
+  "description": "You can found in this library some utilities and tasks that can be shared between multiple gulp's build processes.",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "gulp",
     "build",
     "tasks",
-    "application"
+    "common"
   ],
   "author": "Jimmy Fortin",
   "license": "MIT",

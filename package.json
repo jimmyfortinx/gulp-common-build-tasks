@@ -1,6 +1,6 @@
 {
   "name": "gulp-common-build-tasks",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "You can found in this library some utilities and tasks that can be shared between multiple gulp's build processes.",
   "main": "src/index.js",
   "scripts": {

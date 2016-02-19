@@ -1,13 +1,16 @@
 # gulp-common-build-tasks
+[![NPM Version](https://img.shields.io/npm/v/gulp-common-build-tasks.svg?style=flat-square)](https://www.npmjs.org/package/gulp-common-build-tasks)
+[![Download Month](https://img.shields.io/npm/dm/gulp-common-build-tasks.svg?style=flat-square)](https://www.npmjs.org/package/gulp-common-build-tasks)
+
 You can found in this library some utilities and tasks that can be shared between multiple gulp's build processes.
 
 ## Install
-```javascript
+```
 npm install gulp-common-build-tasks
 ```
 
 ## Usage
-```javascript
+```
 var common = require('gulp-common-build-tasks');
 ```
 
@@ -15,7 +18,7 @@ var common = require('gulp-common-build-tasks');
 This is a wrapper over gulp that gives more functionnalities to it.
 
 ### Tasks group
-```javascript
+```
 var common = require('gulp-common-build-tasks');
 
 var tasks = common.tasks();
@@ -30,7 +33,7 @@ Example: A task named ```.test``` under the namespace ```application``` will cre
 gulp task named ```namespace.test```.
 
 #### When a group is created
-```javascript
+```
 var common = require('gulp-common-build-tasks');
 
 var tasks = common.tasks('namespace');
@@ -39,14 +42,14 @@ module.exports = tasks;
 ```
 
 #### Later
-```javascript
+```
 tasks.setNamespace('namespace');
 ```
 
 ### Task
 ```tasks.create(taskName, dependencies?, gulpFunction?)```
 
-```javascript
+```
 tasks.create('.aTask', ['.anotherTask'], function(gulp, config) {
     [...]
 });
@@ -91,16 +94,16 @@ tasks.import(someFeatureEnabled(require('.anotherTask')));
 
 ## common.scripts
 A tasks group that provide two gulp task:
-* ```.jshint```
-* ```.jscs```
+* **.jshint**
+* **.jscs**
 
 So you just need to import it in your tasks group with ```tasks.import(common.scripts)```.
 
 ## common.config
 An utility that fills a config with default values like:
-* ```projectDirectory```: Finds the current project directory if not already defined
-* ```jshintEnabled```: Checks if the project has a ```.jshintrc``` file.
-* ```jscsEnabled```: Checks if the project has a ```.jscsrc``` file.
+* **projectDirectory**: Finds the current project directory if not already defined
+* **jshintEnabled**: Checks if the project has a ```.jshintrc``` file.
+* **jscsEnabled**: Checks if the project has a ```.jscsrc``` file.
 
 ## Creator
 **Jimmy Fortin**

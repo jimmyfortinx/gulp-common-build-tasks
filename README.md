@@ -94,16 +94,13 @@ tasks.import(someFeatureEnabled(require('.anotherTask')));
 
 ## common.scripts
 A tasks group that provide two gulp task:
-* **.jshint**
-* **.jscs**
+* **.lint**
 
 So you just need to import it in your tasks group with ```tasks.import(common.scripts)```.
 
 ## common.config
 An utility that fills a config with default values like:
 * **projectDirectory**: Finds the current project directory if not already defined
-* **jshintEnabled**: Checks if the project has a ```.jshintrc``` file.
-* **jscsEnabled**: Checks if the project has a ```.jscsrc``` file.
 
 ## Creator
 **Jimmy Fortin**

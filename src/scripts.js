@@ -1,18 +1,27 @@
 'use strict';
 
-var path = require('path');
-
 var $ = require('./utils/plugins-loader');
 var tasks = require('./tasks')();
+var gulpUtils = require('./utils/gulp');
 
 tasks.create('.jshint', function(gulp, config) {
-    return gulp.src(path.join(config.paths.src, '/**/*.js'))
+    var folders = [
+        config.paths.src,
+        config.paths.e2e
+    ];
+
+    return gulp.src(gulpUtils.files(folders, '/**/*.js'))
         .pipe($.jshint(config.jshint))
         .pipe($.jshint.reporter('default'));
 });
 
 tasks.create('.jscs', function(gulp, config) {
-    return gulp.src(path.join(config.paths.src, '/**/*.js'))
+    var folders = [
+        config.paths.src,
+        config.paths.e2e
+    ];
+
+    return gulp.src(gulpUtils.files(folders, '/**/*.js'))
         .pipe($.jscs())
         .pipe($.jscs.reporter());
 });

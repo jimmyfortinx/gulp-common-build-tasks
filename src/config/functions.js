@@ -46,8 +46,10 @@ exports.addDefaultJsHintConfig = function(config) {
                 'fit': false,
                 'before': false,
                 'beforeEach': false,
+                'beforeAll': false,
                 'after': false,
                 'afterEach': false,
+                'afterAll': false,
                 'jasmine': false,
                 'expect': false
             }

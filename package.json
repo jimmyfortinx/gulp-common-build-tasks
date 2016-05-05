@@ -26,6 +26,7 @@
     "bluebird": "^3.3.5",
     "child-process-promise": "^2.0.2",
     "dir-compare": "^1.0.1",
+    "gulp-eslint": "^2.0.0",
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^2.0.0",
     "gulp-load-plugins": "^1.2.0",

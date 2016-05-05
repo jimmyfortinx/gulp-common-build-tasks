@@ -1,4 +1,5 @@
 var gulpUtils = require('./gulp');
+var path = require('path');
 
 describe('utils/gulp', function() {
     describe('files', function() {
@@ -6,7 +7,7 @@ describe('utils/gulp', function() {
             var folders = 'folder';
             var files = 'file.js';
 
-            var expectedFiles = 'folder\\file.js';
+            var expectedFiles = path.join('folder', 'file.js');
 
             expect(gulpUtils.files(folders, files))
                 .toEqual(expectedFiles);
@@ -17,8 +18,8 @@ describe('utils/gulp', function() {
             var files = 'file.js';
 
             var expectedFiles = [
-                'folder1\\file.js',
-                'folder2\\file.js'
+                path.join('folder1', 'file.js'),
+                path.join('folder2', 'file.js')
             ];
 
             expect(gulpUtils.files(folders, files))
@@ -30,8 +31,8 @@ describe('utils/gulp', function() {
             var files = ['file1.js', 'file2.js'];
 
             var expectedFiles = [
-                'folder\\file1.js',
-                'folder\\file2.js'
+                path.join('folder', 'file1.js'),
+                path.join('folder', 'file2.js')
             ];
 
             expect(gulpUtils.files(folders, files))
@@ -43,10 +44,10 @@ describe('utils/gulp', function() {
             var files = ['file1.js', 'file2.js'];
 
             var expectedFiles = [
-                'folder1\\file1.js',
-                'folder1\\file2.js',
-                'folder2\\file1.js',
-                'folder2\\file2.js'
+                path.join('folder1', 'file1.js'),
+                path.join('folder1', 'file2.js'),
+                path.join('folder2', 'file1.js'),
+                path.join('folder2', 'file2.js')
             ];
 
             expect(gulpUtils.files(folders, files))

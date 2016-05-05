@@ -24,7 +24,18 @@ Configuration.prototype.copy = function() {
 };
 
 Configuration.prototype.exec = function(command) {
-    return exec(command, { cwd: this.destination });
+    return exec(command, { cwd: this.destination })
+        .catch(function(result) {
+            var message = '\n-- An error append when executing the command "' + command + '":\n' +
+                'stdout:\n' +
+                result.stdout + '\n' +
+                'stderr:\n' +
+                result.stderr;
+
+            console.error(message);
+
+            return Promise.reject(result);
+        });
 };
 
 module.exports = Configuration;

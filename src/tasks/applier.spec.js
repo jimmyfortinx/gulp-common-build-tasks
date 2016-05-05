@@ -169,17 +169,18 @@ describe('applier', function() {
         expect(gulpMock.task).toHaveBeenCalledWith('test2', jasmine.any(Function));
     });
 
-    it('does not add task if not callback and no dependencies', function() {
+    it('adds a fake task if no callback and no dependencies', function() {
         var tasks = [
             { name: 'test', dependencies: [] }
         ];
 
         applier(gulpMock, tasks);
 
-        expect(gulpMock.task.calls.count()).toBe(0);
+        expect(gulpMock.task.calls.count()).toBe(1);
+        expect(gulpMock.task).toHaveBeenCalledWith('test', jasmine.any(Function));
     });
 
-    it('does not include a dependency when it is wrap into a condition function that return false', function() {
+    it('adds a fake task when it is wrapped into a condition function that return false', function() {
         var conditionalDependencyFunctionReturnsFalse = function() {
             return () => false;
         };
@@ -190,7 +191,8 @@ describe('applier', function() {
 
         applier(gulpMock, tasks);
 
-        expect(gulpMock.task.calls.count()).toBe(0);
+        expect(gulpMock.task.calls.count()).toBe(1);
+        expect(gulpMock.task).toHaveBeenCalledWith('test', jasmine.any(Function));
     });
 
     it('includes a dependency when it is wrap into a condition function that return true', function() {

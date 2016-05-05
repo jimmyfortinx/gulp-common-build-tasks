@@ -21,6 +21,8 @@ function applyTask(gulp, task, skipAbsoluteTasks) {
     } else {
         if (task.callback) {
             gulp.task(taskName, generateGulpTaskFunction(gulp, task));
+        } else {
+            gulp.task(taskName, function() {});
         }
     }
 }

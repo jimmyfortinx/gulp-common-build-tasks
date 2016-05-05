@@ -32,8 +32,10 @@ tasks.create('.jshint', function(gulp, config) {
             'xit': false,
             'fit': false,
             'before': false,
+            'beforeAll': false,
             'beforeEach': false,
             'after': false,
+            'afterAll': false,
             'afterEach': false,
             'jasmine': false,
             'expect': false
